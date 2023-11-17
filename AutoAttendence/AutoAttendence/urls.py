@@ -1,4 +1,4 @@
-"""AutoAttendence URL Configuration
+"""StudentEntryExit URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.1/topics/http/urls/
@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from pro import views
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',views.getIndexPage,name="home"),
+    path('login/',views.loginView),
+    path('logout/',views.logoutView,name="logout")
 ]
